@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vortex Terminal</title>
+	<style>
+		body {
+			background-color: #000;
+			color: #0f0;
+			font-family: 'Courier New', Courier, monospace;
+			padding: 10px;
+		}
+
+		#terminal {
+			width: 800px;
+			height: 600px;
+			border: 1px solid #333;
+			padding: 10px;
+			overflow: auto;
+		}
+
+		#prompt {
+			color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div id="terminal">
+		<div id="title">
+			<span style="font-size: 3em;">██╗    ██╗██╗   ██╗███████╗██████╗  </span><br>
+			<span style="font-size: 3em;">██║    ██║██║   ██║██╔════╝██╔══██╗ </span><br>
+			<span style="font-size: 3em;">██║ █╗ ██║██║   ██║█████╗  ██████╔╝ </span><br>
+			<span style="font-size: 3em;">██║███╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗ </span><br>
+			<span style="font-size: 3em;">╚███╔███╔╝ ╚████╔╝ ███████╗██║  ██║ </span><br>
+			<span style="font-size: 3em;"> ╚══╝╚══╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝</span><br>
+			<span style="font-size: 2em;">Vortex Terminal</span><br>
+		</div>
+		<div id="prompt" style="margin-top: 50px;">
+			<span>user@vortex:</span>
+			<span id="currentPath">~</span>
+			<span>&gt;</span>
+		</div>
+	</div>
+	<script>
+		const terminal = document.getElementById('terminal');
+		const prompt = document.getElementById('prompt');
+		const currentPath = document.getElementById('currentPath');
+		let input = '';
+
+		function print(text) {
+			const node = document.createElement('p');
+			node.textContent = text;
+			terminal.appendChild(node);
+			terminal.scrollTop = terminal.scrollHeight;
+		}
+
+		function clear
